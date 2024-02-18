@@ -16,13 +16,20 @@ const useFetch = (url: string) => {
 
 	// note: to use async/await, you have to define the function and call it
 	useEffect(() => {
+		const controller = new AbortController();
+		const signal = controller.signal;
+
 		async function fetchData() {
-			const response = await fetch(url);
+			const response = await fetch(url, { signal });
 			const data = await response.json();
 			setData(data);
 		}
 
 		fetchData();
+
+		return () => {
+			controller.abort();
+		};
 	}, [url]);
 
 	return [data];
