@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"build": "webpack --progress",
-		"start": "ts-node ./server/index.js"
+		"start": "tsx ./server/index.js"
 	},
 	"browserslist": [
 		">0.2%",
@@ -12,7 +12,7 @@
 		"express": "4.18.2",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"ts-node": "10.9.1"
+		"tsx": "4.7.3"
 	},
 	"devDependencies": {
 		"@types/react": "18.2.55",
